@@ -15,12 +15,12 @@
     </appender>
 
     <!--项目中根日志 只能出现一次-->
-    <root level="ERROR">
+    <root level="INFO">
         <!--根日志输出位置-->
         <appender-ref ref="stdout"/>
     </root>
 
     <!--子日志多个 继承根日志的输出位置-->
-    <logger name="com.baizhi.zcn.mapper" level="DEBUG"/>
+    <logger name="com.baizhi.dao" level="DEBUG"/>
 
 </configuration>
