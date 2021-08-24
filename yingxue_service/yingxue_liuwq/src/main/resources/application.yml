@@ -1,0 +1,10 @@
+server:
+  port: 9999
+  servlet:
+    context-path: /yingx
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/yingx
+    username: root
+    password: root
