@@ -26,7 +26,7 @@ public class Feedback {
     @Column(name = "user_id")
     private Integer userId;
 
-    @JsonFormat(locale = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     @Column(name = "create_time")
     private Date createTime;
 

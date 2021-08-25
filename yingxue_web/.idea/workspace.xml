@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cd355cc5-a3d2-4285-a003-7d27005d2aac" name="Default Changelist" comment="1.vue环境搭建">
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/yingxue_web.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/UPGRADE_GUIDE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/dist/axios.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/dist/axios.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/dist/axios.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/dist/axios.min.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/adapters/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/adapters/http.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/adapters/xhr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/axios.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/cancel/Cancel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/cancel/CancelToken.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/cancel/isCancel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/core/Axios.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/core/InterceptorManager.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/core/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/core/buildFullPath.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/core/createError.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/core/dispatchRequest.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/core/enhanceError.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/core/mergeConfig.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/core/settle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/core/transformData.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/defaults.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/helpers/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/helpers/bind.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/helpers/buildURL.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/helpers/combineURLs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/helpers/cookies.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/helpers/deprecatedMethod.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/helpers/isAbsoluteURL.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/helpers/isAxiosError.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/helpers/isURLSameOrigin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/helpers/normalizeHeaderName.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/helpers/parseHeaders.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/helpers/spread.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/lib/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/axios/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/follow-redirects/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/follow-redirects/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/follow-redirects/debug.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/follow-redirects/http.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/follow-redirects/https.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/follow-redirects/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/follow-redirects/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/.babelrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/.eslintignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/.eslintrc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/.postcssrc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/build/build.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/build/check-versions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/build/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/build/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/build/vue-loader.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/build/webpack.base.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/build/webpack.dev.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/build/webpack.prod.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/config/dev.env.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/config/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/config/prod.env.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/config/test.env.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/src/App.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/src/assets/1.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/src/assets/2.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/src/assets/3.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/src/assets/4.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/src/assets/5.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/src/assets/6.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/src/assets/7.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/src/assets/8.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/src/assets/img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/src/assets/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/src/components/HelloWorld.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/src/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/src/router/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/src/util/request.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/src/views/Main.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/src/views/error/404.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/src/views/feedback/ShowFeedback.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/src/views/login/Login.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/src/views/main/MainView.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/src/views/user/AddUser.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/src/views/user/ShowUser.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/src/views/user/UpdateUser.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/static/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/test/e2e/custom-assertions/elementCount.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/test/e2e/nightwatch.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/test/e2e/runner.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/test/e2e/specs/test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/test/unit/.eslintrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/test/unit/jest.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/test/unit/setup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yingxue_management/test/unit/specs/HelloWorld.spec.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/YingxueLiuwqApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/YingxueLiuwqApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/controller/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/resources/logback.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="_dev" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1xA7IoMdnwG8FF8UV1WBZnV1mQd" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/yingxue_management/src/views" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\framework\yingxue_code\yingxue_web\yingxue_management\src\views" />
+      <recent name="D:\framework\yingxue_code\yingxue_web\yingxue_management" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cd355cc5-a3d2-4285-a003-7d27005d2aac" name="Default Changelist" comment="" />
+      <created>1629785962580</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1629785962580</updated>
+      <workItem from="1629785963852" duration="7996000" />
+      <workItem from="1629808702346" duration="1537000" />
+      <workItem from="1629858890666" duration="3207000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1.vue环境搭建" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.vue环境搭建" />
+  </component>
+</project>
