@@ -1,6 +1,7 @@
 package com.baizhi.controller;
 
 import com.baizhi.entity.Admin;
+import com.baizhi.entity.User;
 import com.baizhi.service.AdminService;
 import com.baizhi.util.ImageCodeUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -49,4 +50,31 @@ public class AdminController {
     @RequestMapping("logout")
     public void logout(){
         request.removeAttribute("admin");
-    }}
+    }
+
+    @RequestMapping("queryAllPage")
+    public HashMap<String,Object> queryAllPage(Integer page,Integer pageSize){
+        log.info("page{}",page);
+        log.info("pageSize{}",pageSize);
+
+        HashMap<String, Object> map = adminService.queryAllPage(page, pageSize);
+
+        return map;
+    }
+
+    @RequestMapping("update")
+    public HashMap<String,Object> update(@RequestBody Admin admin){
+
+        HashMap<String, Object> map = adminService.update(admin);
+
+        return map;
+    }
+
+    @RequestMapping("delete")
+    public HashMap<String,Object> delete(@RequestBody Admin admin){
+
+        HashMap<String, Object> map = adminService.delete(admin);
+
+        return map;
+    }
+}

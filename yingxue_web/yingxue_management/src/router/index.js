@@ -16,6 +16,7 @@ export default new Router({
         {name: 'AddUser',path: 'addUser',component: ()=> import("../views/user/AddUser")},
         {name: 'UpdateUser',path: 'updateUser',component: ()=> import("../views/user/UpdateUser")},
         {name: 'ShowFeedback',path: 'feedback',component: ()=> import("../views/feedback/ShowFeedback")},
+        {name: 'ShowAdmin',path: 'admin',component: ()=> import("../views/admin/ShowAdmin")},
       ]},
     {path: "*",name:"Error404",component:()=>import("../views/error/404")}
   ]
