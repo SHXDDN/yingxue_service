@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd355cc5-a3d2-4285-a003-7d27005d2aac" name="Default Changelist" comment="1.vue环境搭建">
-      <change afterPath="$PROJECT_DIR$/yingxue_management/src/views/admin/AddAdmin.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yingxue_management/src/views/admin/UpdateAdmin.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yingxue_management/src/views/category/AddCategory.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yingxue_management/src/views/category/ShowCategory.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yingxue_management/src/views/category/UpdateCategory.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/resources/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/resources/generatorConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yingxue_management/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/yingxue_management/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yingxue_management/src/views/admin/ShowAdmin.vue" beforeDir="false" afterPath="$PROJECT_DIR$/yingxue_management/src/views/admin/ShowAdmin.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yingxue_management/src/views/category/ShowCategory.vue" beforeDir="false" afterPath="$PROJECT_DIR$/yingxue_management/src/views/category/ShowCategory.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +56,7 @@
       <workItem from="1629785963852" duration="7996000" />
       <workItem from="1629808702346" duration="1537000" />
       <workItem from="1629858890666" duration="6697000" />
-      <workItem from="1629943001113" duration="4699000" />
+      <workItem from="1629943001113" duration="5580000" />
     </task>
     <servers />
   </component>

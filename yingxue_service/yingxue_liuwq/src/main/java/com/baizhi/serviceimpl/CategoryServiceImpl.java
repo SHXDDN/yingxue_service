@@ -1,6 +1,7 @@
 package com.baizhi.serviceimpl;
 
 import com.baizhi.dao.CategoryMapper;
+import com.baizhi.dto.CategoryPageDTO;
 import com.baizhi.dto.PageDTO;
 import com.baizhi.entity.Category;
 import com.baizhi.entity.CategoryExample;
@@ -94,6 +95,28 @@ public class CategoryServiceImpl implements CategoryService {
         }
     }
 
+    @Override
+    public CommonQueryPageVO queryTwoPage(CategoryPageDTO categoryPageDTO) {
+        CategoryExample example = new CategoryExample();
+        example.createCriteria().andParentIdEqualTo(categoryPageDTO.getCategoryId());
+
+        //根据条件查询一级类别数量
+        int count = categoryMapper.selectCountByExample(example);
+        RowBounds rowBounds = new RowBounds((categoryPageDTO.getPage() - 1) * categoryPageDTO.getPageSize(), categoryPageDTO.getPageSize());
+        List<Category> categoryList = categoryMapper.selectByExampleAndRowBounds(example, rowBounds);
+
+        CommonQueryPageVO commonQueryPageVO = new CommonQueryPageVO(categoryPageDTO.getPage(), count, categoryList);
+        return commonQueryPageVO;
+    }
+
+    @Override
+    public List<Category> queryByLevelsCategory(Integer levels) {
+        CategoryExample example = new CategoryExample();
+        example.createCriteria().andLevelsEqualTo(levels);
+        List<Category> categories = categoryMapper.selectByExample(example);
+
+        return categories;
+    }
 
 
 }

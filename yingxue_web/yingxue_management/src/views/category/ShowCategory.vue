@@ -210,7 +210,7 @@ export default {
     },
     twoQueryCategory(twoPage,twoPageSize,categoryId){
       //查询所有数据的方法
-      instance.post("/category/queryTwoPage?page="+twoPage+"&pageSize="+twoPageSize+"&categoryId="+categoryId).then((res)=>{
+      instance.post("/category/queryTwoPage",{"page":twoPage,"pageSize":twoPageSize,"categoryId":categoryId}).then((res)=>{
 
         //数据赋值
         this.twoCategorys=res.data.rows;
