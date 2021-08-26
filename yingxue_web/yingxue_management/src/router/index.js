@@ -16,7 +16,14 @@ export default new Router({
         {name: 'AddUser',path: 'addUser',component: ()=> import("../views/user/AddUser")},
         {name: 'UpdateUser',path: 'updateUser',component: ()=> import("../views/user/UpdateUser")},
         {name: 'ShowFeedback',path: 'feedback',component: ()=> import("../views/feedback/ShowFeedback")},
+
         {name: 'ShowAdmin',path: 'admin',component: ()=> import("../views/admin/ShowAdmin")},
+        {name: 'AddAdmin',path: 'addAdmin',component: ()=> import("../views/admin/AddAdmin")},
+        {name: 'UpdateAdmin',path: 'updateAdmin',component: ()=> import("../views/admin/UpdateAdmin")},
+
+        {name: 'ShowCategory',path: 'category',component: ()=> import("../views/category/ShowCategory")},
+        {name: 'AddCategory',path: 'addCategory',component: ()=> import("../views/category/AddCategory")},
+        {name: 'UpdateCategory',path: 'updateCategory',component: ()=> import("../views/category/UpdateCategory")},
       ]},
     {path: "*",name:"Error404",component:()=>import("../views/error/404")}
   ]

@@ -4,6 +4,8 @@
     <h1 align="center"><strong>{{ msg }}</strong></h1>
     <div ><br>
 
+      <router-link :to="{name:'AddAdmin'}"  ><el-button type="primary">添加管理员</el-button></router-link><br><br>
+
       <!--   表单数据展示   -->
       <el-table border style="width: 100%" :row-class-name="tableRowClassName" :data="admins.filter(data => !search || data.username.toLowerCase().includes(search.toLowerCase()))">
 
@@ -28,6 +30,7 @@
             <el-input v-model="search" size="mini" placeholder="输入关键字搜索"/>
           </template>
           <template slot-scope="scope">
+            <el-button size="mini" type="warning" @click="updateAdmin(scope.row.id)">修改</el-button>
             <el-button size="mini" type="danger" @click="deleteAdmin(scope.row.id)">删除</el-button>
           </template>
         </el-table-column>
@@ -153,6 +156,9 @@ export default {
           });
         });
       }
+    },
+    updateAdmin(id){
+      this.$router.push({name:"UpdateAdmin",params:{id:id}});
     }
   }
 }
