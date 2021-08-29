@@ -33,6 +33,8 @@ public class UserServiceImpl implements UserService {
     UserMapper userMapper;
     @Resource
     HttpServletRequest request;
+
+
     @Override
     public HashMap<String, Object> queryAllPage(Integer page, Integer pageSize) {
 

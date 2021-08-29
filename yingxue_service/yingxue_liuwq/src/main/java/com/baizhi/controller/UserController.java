@@ -80,7 +80,7 @@ public class UserController {
         return userService.queryById(id);
     }
 
-    @AddLog("删除用户")
+
     @RequestMapping("delete")
     public CommonVO delete(@RequestBody User user){
 
