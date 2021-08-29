@@ -2,26 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd355cc5-a3d2-4285-a003-7d27005d2aac" name="Default Changelist" comment="1.vue环境搭建">
-      <change afterPath="$PROJECT_DIR$/yingxue_management/src/views/log/ShowLog.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yingxue_management/src/views/video/AddVideo.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yingxue_management/src/views/video/ShowVideo.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yingxue_management/src/views/video/UpdateVideo.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/controller/CategoryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/dao/AdminDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/dao/AdminDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/service/AdminService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/service/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/service/CategoryService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/serviceimpl/AdminServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/serviceimpl/AdminServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/serviceimpl/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/serviceimpl/CategoryServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/serviceimpl/FeedbackServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/serviceimpl/FeedbackServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/serviceimpl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/serviceimpl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/resources/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/resources/generatorConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yingxue_management/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/yingxue_management/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yingxue_management/src/views/admin/UpdateAdmin.vue" beforeDir="false" afterPath="$PROJECT_DIR$/yingxue_management/src/views/admin/UpdateAdmin.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yingxue_management/src/views/user/AddUser.vue" beforeDir="false" afterPath="$PROJECT_DIR$/yingxue_management/src/views/user/AddUser.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yingxue_management/src/views/user/UpdateUser.vue" beforeDir="false" afterPath="$PROJECT_DIR$/yingxue_management/src/views/user/UpdateUser.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yingxue_management/src/views/video/AddVideo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/yingxue_management/src/views/video/AddVideo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yingxue_management/src/views/video/UpdateVideo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/yingxue_management/src/views/video/UpdateVideo.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +35,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/yingxue_management/src/views" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/yingxue_management/src/views/user" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -59,6 +48,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\framework\yingxue_code\yingxue_web\yingxue_management\src\views\user" />
       <recent name="D:\framework\yingxue_code\yingxue_web\yingxue_management\src\views" />
       <recent name="D:\framework\yingxue_code\yingxue_web\yingxue_management\src\views\admin" />
       <recent name="D:\framework\yingxue_code\yingxue_web\yingxue_management" />
@@ -77,7 +67,7 @@
       <workItem from="1629858890666" duration="6697000" />
       <workItem from="1629943001113" duration="7518000" />
       <workItem from="1630024256244" duration="3065000" />
-      <workItem from="1630201510605" duration="310000" />
+      <workItem from="1630201510605" duration="2990000" />
     </task>
     <servers />
   </component>

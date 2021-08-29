@@ -30,7 +30,7 @@
                 class="upload-demo"
                 ref="upload"
                 name="headImg"
-                action="http://localhost:9191/yingx/user/uploadHeadImg"
+                action="http://localhost:9999/yingx/user/uploadHeadImg"
                 :on-preview="handlePreview"
                 :on-remove="handleRemove"
                 :on-success="uploadSuccess"

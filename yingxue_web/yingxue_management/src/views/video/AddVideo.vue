@@ -26,7 +26,7 @@
                 class="upload-demo"
                 ref="upload"
                 name="videoFile"
-                action="http://localhost:9696/yingx/video/uploadHeadImg"
+                action="http://localhost:9999/yingx/video/uploadHeadImg"
                 :on-preview="handlePreview"
                 :on-remove="handleRemove"
                 :on-success="uploadSuccess"
