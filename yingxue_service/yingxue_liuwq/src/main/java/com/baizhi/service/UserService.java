@@ -8,6 +8,6 @@ public interface UserService {
 
     HashMap<String,Object> queryAllPage(Integer page,Integer pageSize);
 
-    HashMap<String,Object> update(User user);
+    void update(User user);
 
 }

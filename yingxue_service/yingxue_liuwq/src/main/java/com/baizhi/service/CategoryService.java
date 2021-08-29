@@ -14,7 +14,7 @@ public interface CategoryService {
 
     CommonVO add(Category category);
 
-    CommonVO delete(Category category);
+    String delete(Category category);
 
     Category queryById(String id);
 

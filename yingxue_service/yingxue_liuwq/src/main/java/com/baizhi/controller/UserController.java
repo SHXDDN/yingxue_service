@@ -1,7 +1,9 @@
 package com.baizhi.controller;
 
+import com.baizhi.annotation.AddLog;
 import com.baizhi.entity.User;
 import com.baizhi.service.UserService;
+import com.baizhi.vo.CommonVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,12 +32,18 @@ public class UserController {
         return map;
     }
 
+    @AddLog("修改用户")
     @RequestMapping("update")
-    public HashMap<String,Object> update(@RequestBody User user){
+    public CommonVO update(@RequestBody User user){
 
-        HashMap<String, Object> map = userService.update(user);
+        try {
+           userService.update(user);
+            return CommonVO.success("操作成功");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return CommonVO.faild("操作失败");
+        }
 
-        return map;
     }
 
 }

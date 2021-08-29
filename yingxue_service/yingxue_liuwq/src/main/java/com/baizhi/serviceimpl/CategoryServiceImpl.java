@@ -1,5 +1,6 @@
 package com.baizhi.serviceimpl;
 
+import com.baizhi.annotation.AddLog;
 import com.baizhi.dao.CategoryMapper;
 import com.baizhi.dto.CategoryPageDTO;
 import com.baizhi.dto.PageDTO;
@@ -39,6 +40,7 @@ public class CategoryServiceImpl implements CategoryService {
         return commonQueryPageVO;
     }
 
+    @AddLog("添加类别")
     @Override
     public CommonVO add(Category category) {
 
@@ -57,8 +59,11 @@ public class CategoryServiceImpl implements CategoryService {
         }
     }
 
+    @AddLog("删除类别")
     @Override
-    public CommonVO delete(Category category) {
+    public String delete(Category category) {
+
+        String message = null;
         //判断是一级还是二级
         if (category.getParentId() == null){
             //判断一级下面是否有二级
@@ -68,14 +73,18 @@ public class CategoryServiceImpl implements CategoryService {
             int count = categoryMapper.selectCountByExample(example);
             if (count == 0){
                 categoryMapper.delete(category);
-                return CommonVO.success("删除成功");
+                message = "一级类别删除成功";
+                return message;
             }else {
-                return CommonVO.success("一级类别下有二级类别，请先删除二级类别");
+                message = "一级类别下有二级类别，请先删除二级类别";
+                throw new RuntimeException(message);
+
             }
         }else {
             categoryMapper.delete(category);
-            return CommonVO.success("删除失败");
+            message = "二级类别删除失败";
         }
+        return message;
     }
 
     @Override
@@ -84,6 +93,7 @@ public class CategoryServiceImpl implements CategoryService {
         return category;
     }
 
+    @AddLog("修改类别")
     @Override
     public CommonVO update(Category category) {
         try {

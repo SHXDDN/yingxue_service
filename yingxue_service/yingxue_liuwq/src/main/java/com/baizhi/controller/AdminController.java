@@ -6,10 +6,7 @@ import com.baizhi.service.AdminService;
 import com.baizhi.util.ImageCodeUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -76,5 +73,23 @@ public class AdminController {
         HashMap<String, Object> map = adminService.delete(admin);
 
         return map;
+    }
+
+    @RequestMapping("add")
+    public HashMap<String,Object> add(@RequestBody Admin admin){
+
+        HashMap<String, Object> map = adminService.add(admin);
+
+        return map;
+    }
+
+    @GetMapping("queryById")
+    public Admin queryById(String id){
+
+        Admin admin1 = adminService.queryById(id);
+
+        log.info("admin{}",admin1);
+
+        return admin1;
     }
 }

@@ -1,10 +1,12 @@
 package com.baizhi.serviceimpl;
 
+import com.baizhi.annotation.AddLog;
 import com.baizhi.dao.UserMapper;
 import com.baizhi.entity.Feedback;
 import com.baizhi.entity.FeedbackExample;
 import com.baizhi.entity.User;
 import com.baizhi.service.UserService;
+import com.baizhi.vo.CommonVO;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -39,18 +41,12 @@ public class UserServiceImpl implements UserService {
         return map;
     }
 
+    @AddLog("修改用户")
     @Override
-    public HashMap<String, Object> update(User user) {
+    public void update(User user){
 
-        HashMap<String, Object> map = new HashMap<>();
+        userMapper.updateByPrimaryKeySelective(user);
+        int q = 1/0;
 
-        try {
-            userMapper.updateByPrimaryKeySelective(user);
-            map.put("message","操作成功");
-        } catch (Exception e) {
-            e.printStackTrace();
-            map.put("message","操作失败");
-        }
-        return map;
     }
 }

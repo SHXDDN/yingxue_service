@@ -1,10 +1,13 @@
 package com.baizhi.serviceimpl;
 
+import com.baizhi.annotation.AddLog;
 import com.baizhi.dao.AdminDao;
 import com.baizhi.entity.Admin;
 import com.baizhi.entity.FeedbackExample;
 import com.baizhi.entity.User;
 import com.baizhi.service.AdminService;
+import com.baizhi.util.Md5Utils;
+import com.baizhi.util.UUIDUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.stereotype.Service;
@@ -87,6 +90,7 @@ public class AdminServiceImpl implements AdminService {
         return map;
     }
 
+    @AddLog("修改管理员")
     @Override
     public HashMap<String, Object> update(Admin admin) {
 
@@ -102,6 +106,7 @@ public class AdminServiceImpl implements AdminService {
         return map;
     }
 
+    @AddLog("删除管理员")
     @Override
     public HashMap<String, Object> delete(Admin admin) {
 
@@ -115,5 +120,30 @@ public class AdminServiceImpl implements AdminService {
             map.put("message","操作失败");
         }
         return map;
+    }
+
+    @AddLog("添加管理员")
+    @Override
+    public HashMap<String, Object> add(Admin admin) {
+
+        HashMap<String, Object> map = new HashMap<>();
+
+        try {
+            admin.setId(UUIDUtil.getUUID());
+            admin.setSalt(Md5Utils.getSalt(4));
+            admin.setStatus("1");
+            adminDao.insert(admin);
+            map.put("message","添加成功");
+        } catch (Exception e) {
+            e.printStackTrace();
+            map.put("message","添加失败");
+        }
+        return map;
+    }
+
+    @Override
+    public Admin queryById(String id) {
+
+        return adminDao.selectByPrimaryKey(id);
     }
 }

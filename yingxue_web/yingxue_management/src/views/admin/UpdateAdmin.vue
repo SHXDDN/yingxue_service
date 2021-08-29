@@ -89,7 +89,7 @@ export default {
     //根据id查询用户信息
     instance.get("/admin/queryById?id="+id).then((res)=>{
 
-      this.categorys=res.data;
+      this.admins=res.data;
     });
   }
 

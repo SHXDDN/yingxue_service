@@ -35,7 +35,13 @@ public class CategoryController {
     @PostMapping("category/delete")
     public CommonVO delete(@RequestBody Category category){
 
-        return categoryService.delete(category);
+        try {
+            String message = categoryService.delete(category);
+            return CommonVO.success(message);
+        } catch (Exception e) {
+            System.out.println("==========");
+            return CommonVO.faild(e.getMessage());
+        }
     }
 
     @GetMapping("category/queryById")

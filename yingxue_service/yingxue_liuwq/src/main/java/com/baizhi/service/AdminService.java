@@ -15,4 +15,8 @@ public interface AdminService {
 
     HashMap<String,Object> delete(Admin admin);
 
+    HashMap<String,Object> add(Admin admin);
+
+    Admin queryById(String id);
+
 }
