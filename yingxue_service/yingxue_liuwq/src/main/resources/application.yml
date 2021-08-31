@@ -2,6 +2,10 @@ server:
   port: 9999
   servlet:
     context-path: /yingx
+    servlet:
+      multipart:
+        max-file-size: 50MB #默认单个文件不能超过1MB
+        max-request-size: 100MB #默认一次请求最大携带文件不能超过10MB
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver

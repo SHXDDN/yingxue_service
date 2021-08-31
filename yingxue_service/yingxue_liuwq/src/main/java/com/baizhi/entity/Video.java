@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import java.util.Date;
 
 @Data
@@ -43,5 +44,10 @@ public class Video {
 
     @Column(name = "group_id")
     private String groupId;
+
+    @Transient  //该字段数据库没有
+    private Integer playCount; //播放次数
+    @Transient
+    private Integer likeCount; //点赞次数
 
 }

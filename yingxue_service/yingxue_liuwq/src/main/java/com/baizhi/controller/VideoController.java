@@ -57,14 +57,7 @@ public class VideoController {
 
     @RequestMapping("uploadHeadImg")
     public HashMap<String,String> uploadHeadImg(MultipartFile videoFile){
-
-
-        String msg = videoService.uploadHeadImgAliyun(videoFile);
-
-        HashMap<String, String> map = new HashMap<>();
-
-        map.put("videoFile",msg);
-        return map;
+        return videoService.uploadHeadImgAliyun(videoFile);
     }
 
     @PostMapping("delete")

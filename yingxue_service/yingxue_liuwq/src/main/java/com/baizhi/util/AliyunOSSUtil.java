@@ -1,12 +1,17 @@
 package com.baizhi.util;
 
-
+import com.aliyun.oss.HttpMethod;
 import com.aliyun.oss.OSS;
 import com.aliyun.oss.OSSClientBuilder;
+import com.aliyun.oss.model.GeneratePresignedUrlRequest;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Date;
 
 public class AliyunOSSUtil {
 
@@ -51,7 +56,7 @@ public class AliyunOSSUtil {
      * @param bucketName（String）  存储空间名  yingx-2103
      * @param fileName（String）    文件名   目录名/文件名  lalala.png
      * */
-    public static void deleteBucket(String bucketName, String fileName){
+    public static void deleteFile(String bucketName, String fileName){
 
         // 创建OSSClient实例。
         OSS ossClient = new OSSClientBuilder().build(endpoint, accessKeyId, accessKeySecret);
@@ -62,4 +67,87 @@ public class AliyunOSSUtil {
         // 关闭OSSClient。
         ossClient.shutdown();
     }
+
+    /**
+     * 截取视频封面
+     *  参数：
+     * @param bucketName（String）  存储空间名  yingx-2103
+     * @param fileName（String）    要截取封面的视频名   目录名/文件名
+     * */
+    public static URL videoInterceptCover(String bucketName,String fileName){
+
+        // 创建OSSClient实例。
+        OSS ossClient = new OSSClientBuilder().build(endpoint, accessKeyId, accessKeySecret);
+        // 使用精确时间模式截取视频50s处的内容，输出为JPG格式的图片，宽度为800，高度为600。
+        String style = "video/snapshot,t_1000,f_jpg,w_800,h_600";
+
+        // 指定过期时间为10分钟。
+        Date expiration = new Date(new Date().getTime() + 1000 * 60 * 10 );
+        GeneratePresignedUrlRequest req = new GeneratePresignedUrlRequest(bucketName, fileName, HttpMethod.GET);
+        req.setExpiration(expiration);
+        req.setProcess(style);
+        URL signedUrl = ossClient.generatePresignedUrl(req);
+        //System.out.println(signedUrl);
+        // 关闭OSSClient。
+        ossClient.shutdown();
+
+        return signedUrl;
+    }
+
+
+    /**
+     * 将网络文件上传至阿里云
+     *  参数：
+     * @param bucketName（String）  存储空间名  yingx-2103
+     * @param fileName（String）    要上传的图片名   目录名/文件名
+     * @param netFilePath（String）   要上传文件的网络路径
+     * */
+    public static void uploadNetIO(String bucketName,String fileName,String netFilePath) throws IOException {
+
+        // 创建OSSClient实例。
+        OSS ossClient = new OSSClientBuilder().build(endpoint, accessKeyId, accessKeySecret);
+
+        // 填写网络流地址。
+        InputStream inputStream = new URL(netFilePath).openStream();
+        // 依次填写Bucket名称（例如examplebucket）和Object完整路径（例如exampledir/exampleobject.txt）。Object完整路径中不能包含Bucket名称。
+        ossClient.putObject(bucketName, fileName, inputStream);
+
+        // 关闭OSSClient。
+        ossClient.shutdown();
+    }
+
+    /**
+     * 截取视频封面
+     *  参数：
+     * @param bucketName（String）  存储空间名  yingx-2103
+     * @param fileName（String）    要截取封面的视频名   目录名/文件名
+     * @param coverName（String）    要保存的封面名      目录名/文件名
+     * */
+    public static void videoInterceptCoverUpload(String bucketName,String fileName,String coverName) throws IOException {
+
+        // 创建OSSClient实例。
+        OSS ossClient = new OSSClientBuilder().build(endpoint, accessKeyId, accessKeySecret);
+        // 使用精确时间模式截取视频50s处的内容，输出为JPG格式的图片，宽度为800，高度为600。
+        String style = "video/snapshot,t_1000,f_jpg,w_800,h_600";
+
+        // 指定过期时间为10分钟。
+        Date expiration = new Date(new Date().getTime() + 1000 * 60 * 10 );
+        GeneratePresignedUrlRequest req = new GeneratePresignedUrlRequest(bucketName, fileName, HttpMethod.GET);
+        req.setExpiration(expiration);
+        req.setProcess(style);
+        URL signedUrl = ossClient.generatePresignedUrl(req);
+        System.out.println(signedUrl);
+
+        //上传封面
+        //---------------
+        // 填写网络流地址。
+        InputStream inputStream = new URL(signedUrl.toString()).openStream();
+        // 依次填写Bucket名称（例如examplebucket）和Object完整路径（例如exampledir/exampleobject.txt）。Object完整路径中不能包含Bucket名称。
+        ossClient.putObject(bucketName, fileName, inputStream);
+        //---------------
+
+        // 关闭OSSClient。
+        ossClient.shutdown();
+    }
+
 }

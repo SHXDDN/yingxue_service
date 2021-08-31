@@ -6,6 +6,9 @@ import com.baizhi.dto.CategoryPageDTO;
 import com.baizhi.dto.PageDTO;
 import com.baizhi.entity.Category;
 import com.baizhi.entity.CategoryExample;
+import com.baizhi.entity.LikeExample;
+import com.baizhi.po.CategoryPO;
+import com.baizhi.po.VideoPO;
 import com.baizhi.service.CategoryService;
 import com.baizhi.util.UUIDUtil;
 import com.baizhi.vo.CommonQueryPageVO;
@@ -31,11 +34,11 @@ public class CategoryServiceImpl implements CategoryService {
         example.createCriteria().andLevelsEqualTo(1);
         int total = categoryMapper.selectCountByExample(example);
 
-        RowBounds rowBounds = new RowBounds((pageDTO.getPage()-1)*pageDTO.getPageSize(),pageDTO.getPageSize());
+        RowBounds rowBounds = new RowBounds((pageDTO.getPage() - 1) * pageDTO.getPageSize(), pageDTO.getPageSize());
 
         List<Category> categoryList = categoryMapper.selectByExampleAndRowBounds(example, rowBounds);
 
-        CommonQueryPageVO commonQueryPageVO = new CommonQueryPageVO(pageDTO.getPage(),total,categoryList);
+        CommonQueryPageVO commonQueryPageVO = new CommonQueryPageVO(pageDTO.getPage(), total, categoryList);
 
         return commonQueryPageVO;
     }
@@ -45,9 +48,9 @@ public class CategoryServiceImpl implements CategoryService {
     public CommonVO add(Category category) {
 
         try {
-            if (category.getParentId() == null){
+            if (category.getParentId() == null) {
                 category.setLevels(1);
-            }else {
+            } else {
                 category.setLevels(2);
             }
             category.setId(UUIDUtil.getUUID());
@@ -65,22 +68,22 @@ public class CategoryServiceImpl implements CategoryService {
 
         String message = null;
         //判断是一级还是二级
-        if (category.getParentId() == null){
+        if (category.getParentId() == null) {
             //判断一级下面是否有二级
             CategoryExample example = new CategoryExample();
             //查询parentid是否包含一级id
             example.createCriteria().andParentIdEqualTo(category.getId());
             int count = categoryMapper.selectCountByExample(example);
-            if (count == 0){
+            if (count == 0) {
                 categoryMapper.delete(category);
                 message = "一级类别删除成功";
                 return message;
-            }else {
+            } else {
                 message = "一级类别下有二级类别，请先删除二级类别";
                 throw new RuntimeException(message);
 
             }
-        }else {
+        } else {
             categoryMapper.delete(category);
             message = "二级类别删除失败";
         }
@@ -128,5 +131,22 @@ public class CategoryServiceImpl implements CategoryService {
         return categories;
     }
 
+    @Override
+    public List<CategoryPO> queryAllCategory() {
+        //1.获取数据
+        List<CategoryPO> categoryPO = categoryMapper.queryAllCategory();
 
+        //2.遍历数据
+        for (CategoryPO po : categoryPO) {
+
+            CategoryExample example = new CategoryExample();
+            example.createCriteria().andParentIdEqualTo("1");
+            //example.createCriteria().andLevelsEqualTo(1);
+            List<Category> categoryList = categoryMapper.selectByExample(example);
+            po.setCategoryList(categoryList);
+        }
+
+        return categoryPO;
+    }
 }
+

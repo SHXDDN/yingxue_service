@@ -3,6 +3,7 @@ package com.baizhi.service;
 import com.baizhi.dto.CategoryPageDTO;
 import com.baizhi.dto.PageDTO;
 import com.baizhi.entity.Category;
+import com.baizhi.po.CategoryPO;
 import com.baizhi.vo.CommonQueryPageVO;
 import com.baizhi.vo.CommonVO;
 
@@ -23,4 +24,6 @@ public interface CategoryService {
     CommonQueryPageVO queryTwoPage(CategoryPageDTO categoryPageDTO);
 
     List<Category> queryByLevelsCategory(Integer levels);
+
+    List<CategoryPO> queryAllCategory();
 }

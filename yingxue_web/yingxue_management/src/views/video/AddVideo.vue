@@ -133,7 +133,8 @@ export default {
       /*console.log(file);
       console.log(response.message);*/
       //接收后台文件上传的文件名并赋值给表单文件属性
-      this.video.videoPath=response.videoFile;
+      this.video.videoPath=response.fileName;
+      this.video.coverPath=response.coverName;
     },
     submitUpload() {   //点击文件上传触发
       this.$refs.upload.submit();

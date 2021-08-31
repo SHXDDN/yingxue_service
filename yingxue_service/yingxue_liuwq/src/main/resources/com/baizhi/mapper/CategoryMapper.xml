@@ -2,4 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.baizhi.dao.CategoryMapper">
 
+    <select id="queryAllCategory" resultType="com.baizhi.po.CategoryPO">
+        select id,cate_name cateName,levels,parent_id parentId
+        from yx_category WHERE LEVELS=1
+    </select>
+
 </mapper>

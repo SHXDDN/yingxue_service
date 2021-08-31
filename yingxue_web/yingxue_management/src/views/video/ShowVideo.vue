@@ -18,8 +18,8 @@
 
         <el-table-column prop="coverPath" label="视频"  width="350" >
           <template slot-scope="scope">
-            <video :ref="'videoPlayer' + index" controls="controls" width="300" height="200px" >
-              <source :src="scope.row.videoPath" type="video/mp4">您的浏览器不支持Video标签。
+            <video :ref="'videoPlayer' + index" controls="controls" width="300" height="200px" :src="scope.row.videoPath">
+<!--              <source :src="scope.row.videoPath" type="video/mp4">您的浏览器不支持Video标签。-->
             </video>
           </template>
         </el-table-column>

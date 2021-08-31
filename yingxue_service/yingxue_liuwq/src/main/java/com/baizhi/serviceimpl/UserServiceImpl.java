@@ -116,7 +116,7 @@ public class UserServiceImpl implements UserService {
         //字符串处理，将路径替换成空
         String imgPath = headImg.replace("http://yingx-liuwq.oss-cn-beijing.aliyuncs.com/", "");
 
-        AliyunOSSUtil.deleteBucket("yingx-liuwq",imgPath);
+        AliyunOSSUtil.deleteFile("yingx-liuwq",imgPath);
 
         //删除数据
         userMapper.delete(user);
