@@ -1,7 +1,7 @@
 package com.baizhi.controller;
 
-import com.baizhi.annotation.AddLog;
-import com.baizhi.dao.UserMapper;
+import com.baizhi.annotation.AddCache;
+import com.baizhi.annotation.DelCache;
 import com.baizhi.entity.User;
 import com.baizhi.service.UserService;
 import com.baizhi.vo.CommonVO;
@@ -24,6 +24,7 @@ public class UserController {
     @Resource
     UserService userService;
 
+    @AddCache
     @RequestMapping("queryAllPage")
     public HashMap<String,Object> queryAllPage(Integer page,Integer pageSize){
         log.info("page{}",page);
@@ -34,6 +35,7 @@ public class UserController {
         return map;
     }
 
+    @DelCache
     @RequestMapping("update")
     public CommonVO update(@RequestBody User user,MultipartFile headImg){
 
@@ -48,6 +50,7 @@ public class UserController {
         }
     }
 
+    @DelCache
     @RequestMapping("add")
     public CommonVO add(@RequestBody User user){
 
@@ -59,6 +62,7 @@ public class UserController {
             return CommonVO.faild("操作失败");
         }
     }
+
 
     @RequestMapping("uploadHeadImg")
     public HashMap<String,String> uploadHeadImg(MultipartFile headImg){
@@ -81,6 +85,7 @@ public class UserController {
     }
 
 
+    @DelCache
     @RequestMapping("delete")
     public CommonVO delete(@RequestBody User user){
 

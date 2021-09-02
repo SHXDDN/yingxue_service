@@ -8,6 +8,7 @@ class YingxueLiuwqApplicationTests {
 
     @Test
     void contextLoads() {
+
     }
 
 }

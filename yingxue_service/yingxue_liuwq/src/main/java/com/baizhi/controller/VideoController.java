@@ -1,6 +1,8 @@
 package com.baizhi.controller;
 
+import com.baizhi.annotation.AddCache;
 import com.baizhi.annotation.AddLog;
+import com.baizhi.annotation.DelCache;
 import com.baizhi.dto.PageDTO;
 import com.baizhi.entity.User;
 import com.baizhi.entity.Video;
@@ -20,6 +22,7 @@ public class VideoController {
     @Resource
     VideoService videoService;
 
+    @AddCache
     @RequestMapping("queryAllPage")
     public HashMap<String,Object> queryAllPage(@RequestBody PageDTO pageDTO){
 
@@ -33,6 +36,7 @@ public class VideoController {
         return videoService.queryById(id);
     }
 
+    @DelCache
     @RequestMapping("add")
     public CommonVO add(@RequestBody Video video){
         try {
@@ -44,6 +48,7 @@ public class VideoController {
         }
     }
 
+    @DelCache
     @RequestMapping("update")
     public CommonVO update(@RequestBody Video video){
         try {
@@ -60,6 +65,7 @@ public class VideoController {
         return videoService.uploadHeadImgAliyun(videoFile);
     }
 
+    @DelCache
     @PostMapping("delete")
     public CommonVO delete(@RequestBody Video video){
         try {
