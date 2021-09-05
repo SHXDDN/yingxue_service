@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd355cc5-a3d2-4285-a003-7d27005d2aac" name="Default Changelist" comment="1.vue环境搭建">
-      <change afterPath="$PROJECT_DIR$/yingxue_management/src/views/video/SearchVideo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/controller/FeedbackController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/controller/FeedbackController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/controller/VideoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/controller/VideoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/entity/Video.java" beforeDir="false" afterPath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/entity/Video.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/service/VideoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/service/VideoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/serviceimpl/FeedbackServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/serviceimpl/FeedbackServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/serviceimpl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/serviceimpl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/serviceimpl/VideoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/java/com/baizhi/serviceimpl/VideoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/test/java/com/baizhi/YingxueLiuwqApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../yingxue_service/yingxue_liuwq/src/test/java/com/baizhi/YingxueLiuwqApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yingxue_management/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/yingxue_management/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yingxue_management/src/views/Main.vue" beforeDir="false" afterPath="$PROJECT_DIR$/yingxue_management/src/views/Main.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yingxue_management/src/views/user/ShowUser.vue" beforeDir="false" afterPath="$PROJECT_DIR$/yingxue_management/src/views/user/ShowUser.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +65,7 @@
       <workItem from="1630369882285" duration="2256000" />
       <workItem from="1630571647114" duration="2719000" />
       <workItem from="1630585344585" duration="1035000" />
-      <workItem from="1630807357396" duration="439000" />
+      <workItem from="1630807357396" duration="1848000" />
     </task>
     <servers />
   </component>
