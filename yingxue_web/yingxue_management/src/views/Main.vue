@@ -58,7 +58,7 @@
                 <router-link to="/video"><el-button type="warning">视频管理</el-button></router-link>
               </el-menu-item>
               <el-menu-item index="4-2">
-                <router-link to="/search"><el-button type="warning">视频搜索</el-button></router-link>
+                <router-link to="/searchVideo"><el-button type="warning">视频搜索</el-button></router-link>
               </el-menu-item>
             </el-submenu>
 
@@ -138,7 +138,7 @@ export default {
     //判断用户是否有登录标记
     if(token==null){
       this.username="游客";
-      //this.$router.push({name: 'Login'});
+      this.$router.push({name: 'Login'});
     }else{
       this.username=token;
     }

@@ -29,7 +29,7 @@ public class CategoryServiceImpl implements CategoryService {
     @Resource
     CategoryMapper categoryMapper;
 
-    @AddCache
+    //@AddCache
     @Override
     public CommonQueryPageVO queryOnePage(PageDTO pageDTO) {
 
@@ -46,7 +46,7 @@ public class CategoryServiceImpl implements CategoryService {
         return commonQueryPageVO;
     }
 
-    @DelCache
+    //@DelCache
     @AddLog("添加类别")
     @Override
     public CommonVO add(Category category) {
@@ -66,7 +66,7 @@ public class CategoryServiceImpl implements CategoryService {
         }
     }
 
-    @DelCache
+    //@DelCache
     @AddLog("删除类别")
     @Override
     public String delete(Category category) {
@@ -101,7 +101,7 @@ public class CategoryServiceImpl implements CategoryService {
         return category;
     }
 
-    @DelCache
+    //@DelCache
     @AddLog("修改类别")
     @Override
     public CommonVO update(Category category) {
@@ -114,7 +114,7 @@ public class CategoryServiceImpl implements CategoryService {
         }
     }
 
-    @AddCache
+    //@AddCache
     @Override
     public CommonQueryPageVO queryTwoPage(CategoryPageDTO categoryPageDTO) {
         CategoryExample example = new CategoryExample();
@@ -129,7 +129,7 @@ public class CategoryServiceImpl implements CategoryService {
         return commonQueryPageVO;
     }
 
-    @AddCache
+    //@AddCache
     @Override
     public List<Category> queryByLevelsCategory(Integer levels) {
         CategoryExample example = new CategoryExample();
@@ -139,7 +139,7 @@ public class CategoryServiceImpl implements CategoryService {
         return categories;
     }
 
-    @AddCache
+    //@AddCache
     @Override
     public List<CategoryPO> queryAllCategory() {
         //获取数据

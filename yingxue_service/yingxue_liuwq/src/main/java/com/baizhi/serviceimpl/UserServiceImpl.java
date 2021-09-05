@@ -1,16 +1,20 @@
 package com.baizhi.serviceimpl;
 
+import cn.afterturn.easypoi.excel.ExcelExportUtil;
+import cn.afterturn.easypoi.excel.entity.ExportParams;
 import com.baizhi.annotation.AddLog;
 import com.baizhi.dao.UserMapper;
 import com.baizhi.entity.Feedback;
 import com.baizhi.entity.FeedbackExample;
 import com.baizhi.entity.User;
+import com.baizhi.entity.Video;
 import com.baizhi.service.UserService;
 import com.baizhi.util.AliyunOSSUtil;
 import com.baizhi.util.UUIDUtil;
 import com.baizhi.vo.CommonVO;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.session.RowBounds;
+import org.apache.poi.ss.usermodel.Workbook;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
@@ -19,7 +23,9 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.xml.crypto.Data;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -62,7 +68,7 @@ public class UserServiceImpl implements UserService {
         userMapper.updateByPrimaryKeySelective(user);
 
     }
-
+    @AddLog("添加用户")
     @Override
     public void add(User user) {
         user.setId(UUIDUtil.getUUID());
@@ -106,6 +112,7 @@ public class UserServiceImpl implements UserService {
         return userMapper.selectByPrimaryKey(id);
     }
 
+    @AddLog("删除用户")
     @Override
     public void delete(User user) {
 
@@ -120,5 +127,28 @@ public class UserServiceImpl implements UserService {
 
         //删除数据
         userMapper.delete(user);
+    }
+
+    @AddLog("导出用户信息")
+    @Override
+    public void SearchVideo() {
+
+        User user = new User();
+
+        //查询用户数据
+        List<User> users = userMapper.selectAll();
+
+        //创建导出参数对象  参数:大标题,子标题,工作表名
+        ExportParams exportParams = new ExportParams("用户信息表","用户表");
+
+        //设置导出Excel的参数  参数:导出参数对象,要导出的类对象,要导出的数据
+        Workbook workbook = ExcelExportUtil.exportExcel(exportParams, user.getClass(), users);
+
+        //到处excel
+        try {
+            workbook.write(new FileOutputStream(new File("D://framework//11 后期项目//Day9 Poi,EasyPOI//user.xls")));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

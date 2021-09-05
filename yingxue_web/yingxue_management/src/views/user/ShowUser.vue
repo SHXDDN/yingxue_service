@@ -6,6 +6,7 @@
     <router-link :to="{name:'AddUser'}"  ><el-button type="primary">添加员工</el-button></router-link><br><br>
 
 
+
       <!--   表单数据展示   -->
       <el-table border style="width: 100%" :row-class-name="tableRowClassName" :data="users.filter(data => !search || data.username.toLowerCase().includes(search.toLowerCase()))">
 
@@ -45,6 +46,8 @@
         </el-table-column>
 
       </el-table><br>
+
+      <el-button type="primary" @click="searchVideo">导出用户信息</el-button><br><br>
 
       <!--   配置分页工具栏   -->
       <div class="block" align="center">
@@ -168,6 +171,15 @@ export default {
     },
     updateUser(id){  //修改数据的方法
       this.$router.push({name:"UpdateUser",params:{id:id}});
+    },
+    searchVideo(){
+      instance.post("/user/SearchVideo").then((res)=>{
+          this.queryUser();
+        this.$message({
+          message: res.data.message, //提示框提示的信息
+          type: 'success',  //提示框颜色样式
+        });
+      })
     }
   }
 }

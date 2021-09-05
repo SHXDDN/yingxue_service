@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
+import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 
 @RestController
 @RequestMapping("video")
@@ -22,7 +24,7 @@ public class VideoController {
     @Resource
     VideoService videoService;
 
-    @AddCache
+
     @RequestMapping("queryAllPage")
     public HashMap<String,Object> queryAllPage(@RequestBody PageDTO pageDTO){
 
@@ -36,7 +38,7 @@ public class VideoController {
         return videoService.queryById(id);
     }
 
-    @DelCache
+
     @RequestMapping("add")
     public CommonVO add(@RequestBody Video video){
         try {
@@ -48,7 +50,7 @@ public class VideoController {
         }
     }
 
-    @DelCache
+
     @RequestMapping("update")
     public CommonVO update(@RequestBody Video video){
         try {
@@ -65,7 +67,7 @@ public class VideoController {
         return videoService.uploadHeadImgAliyun(videoFile);
     }
 
-    @DelCache
+
     @PostMapping("delete")
     public CommonVO delete(@RequestBody Video video){
         try {
@@ -75,6 +77,21 @@ public class VideoController {
             e.printStackTrace();
             return CommonVO.faild("操作失败");
         }
+    }
+
+    @RequestMapping("searchVideo")
+    public List<Video> searchVideo(String content){
+
+        System.out.println(content);
+
+        List<Video> videos = null;
+        try {
+            videos = videoService.searchVideo(content);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return videos;
     }
 
 }

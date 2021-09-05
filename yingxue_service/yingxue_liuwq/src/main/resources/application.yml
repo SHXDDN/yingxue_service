@@ -6,6 +6,10 @@ server:
       multipart:
         max-file-size: 50MB #默认单个文件不能超过1MB
         max-request-size: 100MB #默认一次请求最大携带文件不能超过10MB
+    redis:
+      host: 192.168.80.131
+      port: 6379
+      database: 3
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
@@ -15,3 +19,9 @@ spring:
 mybatis:
   mapper-locations: classpath:com/baizhi/mapper/*.xml
   type-aliases-package: com.baizhi.entity
+
+logging:
+  level:
+    com:
+      baizhi:
+        dao: debug

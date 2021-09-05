@@ -23,7 +23,7 @@ public class FeedbackController {
     FeedbackService feedbackService;
 
 
-    @AddCache
+
     @RequestMapping("queryAllPage")
     public HashMap<String,Object> queryAllPage(Integer page,Integer pageSize){
         log.info("page{}",page);
@@ -34,7 +34,7 @@ public class FeedbackController {
         return map;
     }
 
-    @DelCache
+
     @RequestMapping("delete")
     public HashMap<String,Object> delete(@RequestBody Feedback feedback){
         log.info("接收的对象{}",feedback);

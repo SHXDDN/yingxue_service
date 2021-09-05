@@ -30,6 +30,7 @@ export default new Router({
         {name: 'ShowVideo',path: 'video',component: ()=> import("../views/video/ShowVideo")},
         {name: 'AddVideo',path: 'addVideo',component: ()=> import("../views/video/AddVideo")},
         {name: 'UpdateVideo',path: 'updateVideo',component: ()=> import("../views/video/UpdateVideo")},
+        {name: 'SearchVideo',path: 'searchVideo',component: ()=> import("../views/video/SearchVideo")},
       ]},
     {path: "*",name:"Error404",component:()=>import("../views/error/404")}
   ]

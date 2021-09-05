@@ -7,20 +7,31 @@ import com.baizhi.entity.LikeExample;
 import com.baizhi.entity.Video;
 import com.baizhi.entity.VideoExample;
 import com.baizhi.po.VideoPO;
+import com.baizhi.repository.VideoRepository;
 import com.baizhi.service.VideoService;
 import com.baizhi.util.AliyunOSSUtil;
 import com.baizhi.util.UUIDUtil;
 import org.apache.ibatis.session.RowBounds;
+import org.elasticsearch.action.search.SearchRequest;
+import org.elasticsearch.action.search.SearchResponse;
+import org.elasticsearch.client.RequestOptions;
+import org.elasticsearch.client.RestHighLevelClient;
+import org.elasticsearch.index.query.QueryBuilders;
+import org.elasticsearch.search.SearchHit;
+import org.elasticsearch.search.SearchHits;
+import org.elasticsearch.search.builder.SearchSourceBuilder;
+import org.elasticsearch.search.fetch.subphase.highlight.HighlightBuilder;
+import org.elasticsearch.search.fetch.subphase.highlight.HighlightField;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 import java.net.URL;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 
 @Service
@@ -33,6 +44,10 @@ public class VideoServiceImpl implements VideoService {
     HttpServletRequest request;
     @Resource
     LikeMapper likeMapper;
+    @Resource
+    RestHighLevelClient restHighLevelClient;
+    @Resource
+    VideoRepository videoRepository;
 
 
 
@@ -168,5 +183,104 @@ public class VideoServiceImpl implements VideoService {
         }
 
         return videoPOS;
+    }
+
+    @Override
+    public List<Video> searchVideo(String content) {
+        //创建处理高亮的对象
+        HighlightBuilder highlightBuilder = new HighlightBuilder()
+                .preTags("<span style='color:red'>")  //高亮前缀
+                .postTags("</span>") //高亮的后缀
+                .requireFieldMatch(false) //开启多行高亮
+                .field("*");
+
+        //创建搜索条件对象
+        SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder()
+                .query(QueryBuilders
+                        .queryStringQuery(content)  //搜索条件
+                        .field("title")  //匹配的字段
+                        .field("description")   //匹配的字段
+                        .analyzer("ik_max_word"))  //指定搜索的分词器
+                .highlighter(highlightBuilder);    //设置高亮查询
+
+        //创建搜索请求对象
+        SearchRequest searchRequest = new SearchRequest()
+                .indices("yingx")  //设置索引
+                .types("video")  //设置类型
+                .source(searchSourceBuilder);  //设置搜索条件 搜索的方式
+
+        //搜索索引
+        SearchResponse searchResponse = null;
+        try {
+            searchResponse = restHighLevelClient.search(searchRequest, RequestOptions.DEFAULT);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        /**--------------------数据处理------------------------*/
+
+        ArrayList<Video> videoList = new ArrayList<>();
+
+        //获取命中的数据
+        SearchHits hits = searchResponse.getHits();
+
+        SearchHit[] hitss = hits.getHits();
+
+        //获取搜索的数据数组
+        for (SearchHit doc : hitss) {
+
+            //获取map数据
+            Map<String, Object> sourceAsMap = doc.getSourceAsMap();
+
+            //获取数据
+            String id = sourceAsMap.get("id").toString();
+            String title = sourceAsMap.get("title").toString();
+            String description = sourceAsMap.get("description").toString();
+            String videoPath = sourceAsMap.get("videoPath").toString();
+            String coverPath = sourceAsMap.get("coverPath").toString();
+            String status = sourceAsMap.get("status").toString();
+            String categoryId = sourceAsMap.get("categoryId").toString();
+            String userId = sourceAsMap.get("userId").toString();
+
+            //判断该数据是否为空
+            //boolean b = sourceAsMap.containsKey("groupId");
+
+            /*String groupId =null;
+            if(sourceAsMap.get("groupId")!=null){
+                groupId = sourceAsMap.get("groupId").toString();
+            }*/
+
+            String groupId =sourceAsMap.get("groupId")!=null?sourceAsMap.get("groupId").toString():null;
+
+            String createTimes = sourceAsMap.get("createTime").toString();
+            Date createTime =null;
+            try {
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                createTime = simpleDateFormat.parse(createTimes);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            //将数据封装为对象
+            Video video = new Video(id, title, description, videoPath, coverPath, status, createTime, categoryId, userId, groupId);
+
+
+            /**处理高亮的数据*/
+            Map<String, HighlightField> highlightFields = doc.getHighlightFields();
+
+            if(highlightFields.get("title")!=null){
+                String titles = highlightFields.get("title").fragments()[0].toString();
+                video.setTitle(titles);
+            }
+
+            if(highlightFields.get("description")!=null){
+                String descriptions = highlightFields.get("description").fragments()[0].toString();
+                video.setDescription(descriptions);
+            }
+
+            //将封装的对象放入集合
+            videoList.add(video);
+        }
+        return videoList;
     }
 }

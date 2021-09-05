@@ -24,6 +24,8 @@ public interface VideoService {
 
     List<VideoPO> queryByReleaseTime();
 
+    List<Video> searchVideo(String content);
+
 
 
 }
